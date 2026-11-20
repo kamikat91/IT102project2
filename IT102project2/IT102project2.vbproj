@@ -215,6 +215,9 @@
     <EmbeddedResource Include="frmAttendantSelect.resx">
       <DependentUpon>frmAttendantSelect.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCustomerMainMenu.resx">
+      <DependentUpon>frmCustomerMainMenu.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCustomerSelect.resx">
       <DependentUpon>frmCustomerSelect.vb</DependentUpon>
     </EmbeddedResource>
