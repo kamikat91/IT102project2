@@ -1,0 +1,9 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+  </Configurations>
+  <Project Path="IT102project2/IT102project2.vbproj">
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
+</Solution>
