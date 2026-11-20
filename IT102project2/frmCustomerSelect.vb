@@ -17,16 +17,6 @@ Public Class frmCustomerSelect
 
         Using conn As New SQLiteConnection(connectionString)
             conn.Open()
-            Dim strQuery As String = "SELECT intStateID, strState FROM TStates"
-            Using command As New SQLiteCommand(strQuery, conn)
-                Dim adapter As New SQLiteDataAdapter(command)
-                Dim dataTable As New DataTable()
-                adapter.Fill(dataTable)
-
-                cbostate.DataSource = dataTable
-                cbostate.DisplayMember = "strState"
-                cbostate.ValueMember = "intStateID"
-            End Using
             Dim strPassengerQuery As String = "SELECT intPassengerID, strFirstName || ' ' || strLastName AS strFullName FROM TPassengers"
 
             Using command As New SQLiteCommand(strPassengerQuery, conn)
@@ -39,5 +29,10 @@ Public Class frmCustomerSelect
                 cbopassengers.ValueMember = "intPassengerID"
             End Using
         End Using
+    End Sub
+
+    Private Sub btnsubmit_Click(sender As Object, e As EventArgs) Handles btnsubmit.Click
+        Dim frmcustomermainmenudisplay As New frmCustomerMainMenu(cbopassengers.SelectedValue)
+        frmcustomermainmenudisplay.ShowDialog()
     End Sub
 End Class

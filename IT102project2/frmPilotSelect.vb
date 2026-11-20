@@ -12,16 +12,6 @@ Public Class frmPilotSelect
 
         Using conn As New SQLiteConnection(connectionString)
             conn.Open()
-            Dim strQuery As String = "SELECT intPilotRoleID, strPilotRole FROM TPilotRoles"
-            Using command As New SQLiteCommand(strQuery, conn)
-                Dim adapter As New SQLiteDataAdapter(command)
-                Dim dataTable As New DataTable()
-                adapter.Fill(dataTable)
-
-                cbopilotroles.DataSource = dataTable
-                cbopilotroles.DisplayMember = "strPilotRole"
-                cbopilotroles.ValueMember = "intPilotRoleID"
-            End Using
 
             '' get primary key, first name, and last name from tpilots
             Dim strPilotQuery As String = "SELECT intPilotID, strFirstName || ' ' || strLastName AS strFullName FROM TPilots"
@@ -37,5 +27,10 @@ Public Class frmPilotSelect
             End Using
 
         End Using
+    End Sub
+
+    Private Sub btnsubmit_Click(sender As Object, e As EventArgs) Handles btnsubmit.Click
+        Dim frmpilotmainmenudisplay As New frmPilotMainMenu(cbopilots.SelectedValue)
+        frmpilotmainmenudisplay.ShowDialog()
     End Sub
 End Class
