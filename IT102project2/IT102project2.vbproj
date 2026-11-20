@@ -94,17 +94,108 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.vb">
+    <Compile Include="frmAddCustomer.Designer.vb">
+      <DependentUpon>frmAddCustomer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddCustomer.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="frmAttendantFlights.Designer.vb">
+      <DependentUpon>frmAttendantFlights.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAttendantFlights.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAttendantMainMenu.Designer.vb">
+      <DependentUpon>frmAttendantMainMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAttendantMainMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAttendantSelect.Designer.vb">
+      <DependentUpon>frmAttendantSelect.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAttendantSelect.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomerFlight.Designer.vb">
+      <DependentUpon>frmCustomerFlight.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCustomerFlight.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomerMainMenu.Designer.vb">
+      <DependentUpon>frmCustomerMainMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCustomerMainMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomerSelect.Designer.vb">
+      <DependentUpon>frmCustomerSelect.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCustomerSelect.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.vb">
+      <DependentUpon>frmMain.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOverallStatistics.Designer.vb">
+      <DependentUpon>frmOverallStatistics.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmOverallStatistics.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPilotMainMenu.Designer.vb">
+      <DependentUpon>frmPilotMainMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPilotMainMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPilotSelect.Designer.vb">
+      <DependentUpon>frmPilotSelect.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPilotSelect.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShowFlights.Designer.vb">
+      <DependentUpon>frmShowFlights.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmShowFlights.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShowPilotFlights.Designer.vb">
+      <DependentUpon>frmShowPilotFlights.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmShowPilotFlights.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUpdateAttendants.Designer.vb">
+      <DependentUpon>frmUpdateAttendants.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmUpdateAttendants.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUpdateCustomer.Designer.vb">
+      <DependentUpon>frmUpdateCustomer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmUpdateCustomer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUpdatePilots.Designer.vb">
+      <DependentUpon>frmUpdatePilots.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmUpdatePilots.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -118,6 +209,21 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmAddCustomer.resx">
+      <DependentUpon>frmAddCustomer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAttendantSelect.resx">
+      <DependentUpon>frmAttendantSelect.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCustomerSelect.resx">
+      <DependentUpon>frmCustomerSelect.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPilotSelect.resx">
+      <DependentUpon>frmPilotSelect.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
