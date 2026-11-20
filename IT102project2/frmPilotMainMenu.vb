@@ -1,3 +1,11 @@
 ﻿Public Class frmPilotMainMenu
 
+    Dim intPilotID As Integer
+    Public Sub New(ByVal intReceivedValue As Integer)
+        InitializeComponent()
+        intPilotID = intReceivedValue
+    End Sub
+    Private Sub frmPilotMainMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class
