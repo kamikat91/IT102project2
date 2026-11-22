@@ -2,6 +2,11 @@
 Imports System.IO
 
 Public Class frmUpdatePilots
+    Dim intPilotID As Integer
+    Public Sub New(ByVal intReceivedValue As Integer)
+        InitializeComponent()
+        intPilotID = intReceivedValue
+    End Sub
     Private Sub frmUpdatePilots_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim databasePath As String =
             Path.GetFullPath(Path.Combine(Application.StartupPath,

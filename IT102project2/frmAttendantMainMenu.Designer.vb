@@ -31,7 +31,7 @@ Partial Class frmAttendantMainMenu
         Me.btnshowattendantflights.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.btnshowattendantflights.Location = New System.Drawing.Point(449, 188)
         Me.btnshowattendantflights.Name = "btnshowattendantflights"
-        Me.btnshowattendantflights.Size = New System.Drawing.Size(149, 71)
+        Me.btnshowattendantflights.Size = New System.Drawing.Size(149, 83)
         Me.btnshowattendantflights.TabIndex = 58
         Me.btnshowattendantflights.Text = "Show Attendant Flights"
         Me.btnshowattendantflights.UseVisualStyleBackColor = True

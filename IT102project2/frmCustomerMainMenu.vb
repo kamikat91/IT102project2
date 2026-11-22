@@ -16,7 +16,12 @@
     End Sub
 
     Private Sub btnaddcustomerflight_Click(sender As Object, e As EventArgs) Handles btnaddcustomerflight.Click
-        Dim frmupdatecustomerdisplay As New frmUpdateCustomer(intPassengerID)
+        Dim frmupdatecustomerdisplay As New frmAddCustomerFlight(intPassengerID)
+        frmupdatecustomerdisplay.ShowDialog()
+    End Sub
+
+    Private Sub btnshowcustomerflights_Click(sender As Object, e As EventArgs) Handles btnshowcustomerflights.Click
+        Dim frmupdatecustomerdisplay As New frmCustomerFlight(intPassengerID)
         frmupdatecustomerdisplay.ShowDialog()
     End Sub
 End Class

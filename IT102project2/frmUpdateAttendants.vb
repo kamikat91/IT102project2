@@ -2,6 +2,11 @@
 Imports System.IO
 
 Public Class frmUpdateAttendants
+    Dim intAttendantID As Integer
+    Public Sub New(ByVal intReceivedValue As Integer)
+        InitializeComponent()
+        intAttendantID = intReceivedValue
+    End Sub
     Private Sub frmUpdateAttendants_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
