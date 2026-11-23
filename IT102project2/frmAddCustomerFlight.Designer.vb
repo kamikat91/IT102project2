@@ -25,6 +25,7 @@ Partial Class frmAddCustomerFlight
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtinput = New System.Windows.Forms.TextBox()
         Me.cboflights = New System.Windows.Forms.ComboBox()
+        Me.btnsubmit = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -46,16 +47,27 @@ Partial Class frmAddCustomerFlight
         'cboflights
         '
         Me.cboflights.FormattingEnabled = True
-        Me.cboflights.Location = New System.Drawing.Point(209, 213)
+        Me.cboflights.Location = New System.Drawing.Point(62, 208)
         Me.cboflights.Name = "cboflights"
-        Me.cboflights.Size = New System.Drawing.Size(121, 24)
+        Me.cboflights.Size = New System.Drawing.Size(254, 24)
         Me.cboflights.TabIndex = 3
+        '
+        'btnsubmit
+        '
+        Me.btnsubmit.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.btnsubmit.Location = New System.Drawing.Point(320, 276)
+        Me.btnsubmit.Name = "btnsubmit"
+        Me.btnsubmit.Size = New System.Drawing.Size(149, 71)
+        Me.btnsubmit.TabIndex = 55
+        Me.btnsubmit.Text = "Submit"
+        Me.btnsubmit.UseVisualStyleBackColor = True
         '
         'frmAddCustomerFlight
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.btnsubmit)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtinput)
         Me.Controls.Add(Me.cboflights)
@@ -69,4 +81,5 @@ Partial Class frmAddCustomerFlight
     Friend WithEvents Label1 As Label
     Friend WithEvents txtinput As TextBox
     Friend WithEvents cboflights As ComboBox
+    Friend WithEvents btnsubmit As Button
 End Class
