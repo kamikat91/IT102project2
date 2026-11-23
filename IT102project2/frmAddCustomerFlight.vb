@@ -53,6 +53,8 @@ Public Class frmAddCustomerFlight
 
             Using command As New SQLiteCommand(strInsertQuery, conn)
                 command.Parameters.AddWithValue("@intFlightID", cboflightchosen)
+                command.Parameters.AddWithValue("@intPassengerID", intPassengerID)
+                command.Parameters.AddWithValue("@strSeat", strseatchosen)
                 command.ExecuteNonQuery()
             End Using
         End Using

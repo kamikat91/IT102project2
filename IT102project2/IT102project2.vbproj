@@ -236,6 +236,9 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmOverallStatistics.resx">
+      <DependentUpon>frmOverallStatistics.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPilotFlights.resx">
       <DependentUpon>frmPilotFlights.vb</DependentUpon>
     </EmbeddedResource>
