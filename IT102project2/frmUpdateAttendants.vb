@@ -3,36 +3,55 @@ Imports System.IO
 
 Public Class frmUpdateAttendants
     Dim intAttendantID As Integer
+
     Public Sub New(ByVal intReceivedValue As Integer)
         InitializeComponent()
         intAttendantID = intReceivedValue
     End Sub
-    Private Sub frmUpdateAttendants_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    Private Sub frmUpdateAttendants_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim databasePath As String =
+            Path.GetFullPath(Path.Combine(Application.StartupPath,
+                     "..\..\..\flyme2themoon.db"))
+
+        Dim connectionString As String =
+            "Data Source=" & databasePath & ";Version=3;"
+
+        Using conn As New SQLiteConnection(connectionString)
+            conn.Open()
+
+            Dim strSelectAttendant As String = "SELECT * FROM TAttendants WHERE intAttendantID = @intAttendantID"
+            Using cmdAttendant As New SQLiteCommand(strSelectAttendant, conn)
+                cmdAttendant.Parameters.AddWithValue("@intAttendantID", intAttendantID)
+
+                Using reader As SQLiteDataReader = cmdAttendant.ExecuteReader()
+                    If reader.Read() Then
+                        txtfirstname.Text = reader("strFirstName").ToString()
+                        txtlastname.Text = reader("strLastName").ToString()
+                        txtemployeeID.Text = reader("strEmployeeID").ToString()
+                        txtdateofhire.Text = reader("dtmDateOfHire").ToString()
+                        txtdateoftermination.Text = reader("dtmDateOfTermination").ToString()
+                    End If
+                End Using
+            End Using
+        End Using
     End Sub
 
     Private Sub btnsubmit_Click(sender As Object, e As EventArgs) Handles btnsubmit.Click
-        Dim strFirstName As String
-        Dim strLastName As String
-        Dim strEmployeeID As String
-        Dim strDateOfHire As String
-        Dim strDateOfTermination As String
-        Dim intAttendantID As Integer
-
-        strFirstName = txtfirstname.Text
-        strLastName = txtlastname.Text
-        strEmployeeID = txtemployeeID.Text
-        strDateOfHire = txtdateofhire.Text
-        strDateOfTermination = txtdateoftermination.Text
+        Dim strFirstName As String = txtfirstname.Text
+        Dim strLastName As String = txtlastname.Text
+        Dim strEmployeeID As String = txtemployeeID.Text
+        Dim strDateOfHire As String = txtdateofhire.Text
+        Dim strDateOfTermination As String = txtdateoftermination.Text
 
         Dim strUpdateQuery As String =
-            $"UPDATE TAttendants
-            SET strFirstName = '{strFirstName}',
-            strLastName = '{strLastName}',
-            strEmployeeID = '{strEmployeeID}',
-            dtmDateOfHire = {strDateOfHire},
-            dtmDateOfTermination = {strDateOfTermination},
-            WHERE intAttendantID = {intAttendantID}"
+            "UPDATE TAttendants " &
+            "SET strFirstName = @strFirstName, " &
+            "    strLastName = @strLastName, " &
+            "    strEmployeeID = @strEmployeeID, " &
+            "    dtmDateOfHire = @dtmDateOfHire, " &
+            "    dtmDateOfTermination = @dtmDateOfTermination " &
+            "WHERE intAttendantID = @intAttendantID"
 
         Dim databasePath As String =
             Path.GetFullPath(Path.Combine(Application.StartupPath,
@@ -44,9 +63,17 @@ Public Class frmUpdateAttendants
         Using conn As New SQLiteConnection(connectionString)
             conn.Open()
             Using command As New SQLiteCommand(strUpdateQuery, conn)
-                command.ExecuteNonQuery()
+                command.Parameters.AddWithValue("@strFirstName", strFirstName)
+                command.Parameters.AddWithValue("@strLastName", strLastName)
+                command.Parameters.AddWithValue("@strEmployeeID", strEmployeeID)
+                command.Parameters.AddWithValue("@dtmDateOfHire", strDateOfHire)
+                command.Parameters.AddWithValue("@dtmDateOfTermination", strDateOfTermination)
+                command.Parameters.AddWithValue("@intAttendantID", intAttendantID)
 
+                command.ExecuteNonQuery()
             End Using
         End Using
+
+        MessageBox.Show("Row updated!")
     End Sub
 End Class
