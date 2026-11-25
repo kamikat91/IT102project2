@@ -51,6 +51,17 @@ Public Class frmUpdatePilots
     End Sub
 
     Private Sub btnsubmit_Click(sender As Object, e As EventArgs) Handles btnsubmit.Click
+        If String.IsNullOrWhiteSpace(txtfirstname.Text) OrElse
+           String.IsNullOrWhiteSpace(txtlastname.Text) OrElse
+           String.IsNullOrWhiteSpace(txtemployeeID.Text) OrElse
+           String.IsNullOrWhiteSpace(txtdateofhire.Text) OrElse
+           String.IsNullOrWhiteSpace(txtdateoftermination.Text) OrElse
+           String.IsNullOrWhiteSpace(txtdateoflicense.Text) OrElse
+           cbopilotroles.SelectedValue Is Nothing Then
+            MessageBox.Show("All fields are required. Please fill in every box.", "Validation Error")
+            Exit Sub
+        End If
+
         Dim strFirstName As String = txtfirstname.Text
         Dim strLastName As String = txtlastname.Text
         Dim strEmployeeID As String = txtemployeeID.Text

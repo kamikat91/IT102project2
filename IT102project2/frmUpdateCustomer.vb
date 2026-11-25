@@ -52,6 +52,18 @@ Public Class frmUpdateCustomer
     End Sub
 
     Private Sub btnsubmit_Click(sender As Object, e As EventArgs) Handles btnsubmit.Click
+        If String.IsNullOrWhiteSpace(txtfirstname.Text) OrElse
+           String.IsNullOrWhiteSpace(txtlastname.Text) OrElse
+           String.IsNullOrWhiteSpace(txtaddress.Text) OrElse
+           String.IsNullOrWhiteSpace(txtcity.Text) OrElse
+           cbostate.SelectedValue Is Nothing OrElse
+           String.IsNullOrWhiteSpace(txtzipcode.Text) OrElse
+           String.IsNullOrWhiteSpace(txtphonenumber.Text) OrElse
+           String.IsNullOrWhiteSpace(txtemail.Text) Then
+            MessageBox.Show("All fields are required. Please fill in every box.", "Validation Error")
+            Exit Sub
+        End If
+
         Dim strFirstName As String
         Dim strLastName As String
         Dim strPhoneNumber As String
